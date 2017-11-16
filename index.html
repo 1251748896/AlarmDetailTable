@@ -27,15 +27,12 @@
         echartsData("04f68496-75b9-4fa2-b80b-2467bbe1f123","1108655330302468580","http://183.220.115.100:8088");
         
 function echartsData(appToken,appMetricId,appUrl){
-    alert("appToken"+appToken);
     $.ajax({
            type:"GET",
            url:appUrl+"/api/siteGis/sensorsEventsByMetricId?"+"token="+appToken+"&metricId="+appMetricId,
            dataType:"json",
            async:true,
            success:function(res){
-           alert("你好");
-           
            var echartData=res.results;
            var timeDate=[];//时间
            var proValue=[];//值
