@@ -26,16 +26,12 @@
 //       echartsData();
 function echartsData(appToken,appMetricId,appUrl){
     $.ajax({
-           console.log(appUrl);
-           console.log(appMetricId);
-           console.log(appToken);
            type:"GET",
            url:appUrl+"/api/siteGis/sensorsEventsByMetricId?"+"token="+appToken+"&metricId="+appMetricId,
            dataType:"json",
            async:true,
            success:function(res){
            alert("你好");
-           console.log(res);
            
            var echartData=res.results;
            var timeDate=[];//时间
